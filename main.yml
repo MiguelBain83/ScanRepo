@@ -2,17 +2,17 @@
   hosts: all
   tasks:
   - name: Installation Tomcat
-    package: 
+    ansible.builtin.package: 
      name: tomcat9
      state: latest
 
   - name: Service Tomcat Start
-    service:
+    ansible.builtin.service:
      name: tomcat9
      state: started
 
   - name: Download Conf Tomcat 
-    get_url: 
+    ansible.builtin.get_url: 
       url: https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war
       dest: /var/lib/tomcat9/webapps
       owner: tomcat
