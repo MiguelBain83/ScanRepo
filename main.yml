@@ -1,16 +1,18 @@
-- name: Installation Tomcat
-   package: 
-    name: tomcat9
-    state: latest
+- hosts: all
+  tasks:
+  - name: Installation Tomcat
+    package: 
+     name: tomcat9
+     state: latest
 
-- name: Service Tomcat Start
-   service:
-    name: tomcat9
-    state: startint
+  - name: Service Tomcat Start
+    service:
+     name: tomcat9
+     state: startint
 
-- name: Download Conf Tomcat 
-   get_url: https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war
-   dest: /var/lib/tomcat9/webapps
-   owner: tomcat
-   group: tomcat
-   mode: 0644
+  - name: Download Conf Tomcat 
+     get_url: https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war
+     dest: /var/lib/tomcat9/webapps
+     owner: tomcat
+     group: tomcat
+     mode: 0644
