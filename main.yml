@@ -8,7 +8,7 @@
   - name: Service Tomcat Start
     service:
      name: tomcat9
-     state: startint
+     state: started
 
   - name: Download Conf Tomcat 
     get_url: 
