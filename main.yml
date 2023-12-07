@@ -1,5 +1,5 @@
 - name: Playbook Tomcat
-- hosts: all
+  hosts: all
   tasks:
   - name: Installation Tomcat
     package: 
