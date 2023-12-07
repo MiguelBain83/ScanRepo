@@ -11,8 +11,9 @@
      state: startint
 
   - name: Download Conf Tomcat 
-     get_url: https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war
-     dest: /var/lib/tomcat9/webapps
-     owner: tomcat
-     group: tomcat
-     mode: 0644
+    get_url: 
+      url: https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war
+      dest: /var/lib/tomcat9/webapps
+      owner: tomcat
+      group: tomcat
+      mode: 0644
