@@ -16,7 +16,7 @@
     ansible.builtin.get_url:
       url: https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.11.2-amd64.deb
       dest: /tmp/
-      user: root
+      owner: root
       group: root
       mode: 0644
 
