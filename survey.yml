@@ -1,7 +1,7 @@
 - name: Playbook Survey
   hosts: all
   tasks:
-  - name: Installation Locate
+  - name: Installation "{{variable}}"
     ansible.builtin.package: 
-     name: locate
+     name: "{{variable}}"
      state: latest
