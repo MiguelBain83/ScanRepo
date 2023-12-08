@@ -1,3 +1,7 @@
-- name: Installation package
-  ansible.builtin.package:
-   - name: locate
+- name: Playbook Test
+  hosts: all
+  tasks:
+  - name: Installation Locate
+    ansible.builtin.package: 
+     name: locate
+     state: latest
