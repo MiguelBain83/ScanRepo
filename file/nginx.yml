@@ -1,3 +1,7 @@
 - module: nginx
   log:
     enabled: true
+  ingress_controller:
+    enabled: true
+  error:
+    enabled: true
