@@ -1,4 +1,3 @@
-```
 filebeat.inputs:
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
@@ -18,4 +17,3 @@ processors:
   - add_cloud_metadata: ~
   - add_docker_metadata: ~
   - add_kubernetes_metadata: ~
-```
