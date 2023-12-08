@@ -36,11 +36,16 @@
 
   - name: déploiement du fichier de conf system
     ansible.builtin.copy:
-      src: file/system.yml
+      src: file/{{ item }}.yml
       dest: /etc/filebeat/modules.d/
       owner: root
       group: root
       mode: 0644
+    loop:
+    - auditd.yml
+    - apache.yml
+    - nginx.yml
+    - tomcat.yml
     notify:
      - Restart filebeat
 
