@@ -1,0 +1,39 @@
+- name: Deploimeent des logs
+  hosts: all
+  tasks:
+  - name: Set hostname
+    ansible.builtin.hostname: 
+    name: Alex
+
+  - name: Télécharger .deb
+    ansible.builtin.get_url:
+    url: https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.11.2-amd64.deb
+    dest: /tmp/
+    user: root
+    group: root
+    mode: 0644
+
+ - name: Installer .deb  
+   ansible.builtin.apt:
+   deb: /tmp/filebeat-8.11.2-amd64.deb
+
+ - name: Service Filebeat Start
+    ansible.builtin.service:
+     name: filebeat
+     state: started
+
+ - name: dépliement du fichier de conf filebeat
+    ansible.builtin.file:
+    src: /template/filebeat.yml
+    dest: /etc/filebeat/
+    owner: root
+    group: root
+    mode: 0644
+
+     - name: dépliement du fichier de conf system
+    ansible.builtin.file:
+    src: /file/system.yml
+    dest: /etc/filebeat/modules.d/
+    owner: root
+    group: root
+    mode: 0644
