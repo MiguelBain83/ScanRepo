@@ -31,7 +31,7 @@
 
   - name: déploiement du template filebeat
     ansible.builtin.template:
-      src: /template/filebeat.yml
+      src: template/filebeat.yml
       dest: /etc/filebeat/
       owner: root
       group: root
@@ -40,8 +40,8 @@
       - Restart filebeat
 
   - name: déploiement du fichier de conf system
-    ansible.builtin.file:
-      src: /file/system.yml
+    ansible.builtin.copy:
+      src: file/system.yml
       dest: /etc/filebeat/modules.d/
       owner: root
       group: root
