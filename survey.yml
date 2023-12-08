@@ -3,5 +3,6 @@
   tasks:
   - name: Installation de packets
     ansible.builtin.package: 
-     name: "{{variable.split("\n")}}"
-     state: latest
+      name : "{{ item }}"     
+      state: latest
+    loop: "{{ variable.split('\n') }}"
