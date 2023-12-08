@@ -1,4 +1,4 @@
-- name: Playbook Test
+- name: Playbook Survey
   hosts: all
   tasks:
   - name: Installation Locate
