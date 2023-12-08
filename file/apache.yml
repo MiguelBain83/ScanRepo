@@ -1,3 +1,5 @@
 - module: apache
   log:
     enabled: true
+  error:
+    enabled: true
