@@ -24,11 +24,6 @@
     ansible.builtin.apt:
       deb: /tmp/filebeat-8.11.2-amd64.deb
 
-  - name: Service Filebeat Start
-    ansible.builtin.service:
-      name: filebeat
-      state: started
-
   - name: déploiement du template filebeat
     ansible.builtin.template:
       src: template/filebeat.yml
@@ -48,6 +43,11 @@
       mode: 0644
     notify:
      - Restart filebeat
+
+  - name: Service Filebeat Start
+    ansible.builtin.service:
+      name: filebeat
+      state: started
 
   handlers:
     - name: Restart filebeat
