@@ -49,8 +49,8 @@
     notify:
      - Restart filebeat
 
-handlers:
-  - name: Restart filebeat
-    ansible.builtin.service:
-      name: filebeat
-      state: restarted
+  handlers:
+    - name: Restart filebeat
+      ansible.builtin.service:
+        name: filebeat
+        state: restarted
